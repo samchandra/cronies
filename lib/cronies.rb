@@ -26,7 +26,7 @@ module Cronies
         end
       end
 
-      log_now "Create lock file"
+      log_now "Create lock file - #{@lock_file}"
       File.open(@lock_file, "w") do |f|
         f.puts Time.now.to_i
       end
@@ -35,12 +35,13 @@ module Cronies
     def unlock
       log_now "Script completed, deleting lock file"
       FileUtils.rm_rf(@lock_file)
+      log_line
     end
 
     private
 
     def log_line
-      log_now("#{'-' * 80}")
+      log_now("#{'-' * 40}")
     end
 
     def log_now(msg)
