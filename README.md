@@ -21,7 +21,7 @@ Or install it yourself as:
 
 1. Initialize object with script name
 
-	cronies = Cronies.new(\__FILE__)
+	cronies = Cronies::Base.new(\__FILE__)
 	
 2. Call lock _before_ your script code
 	
